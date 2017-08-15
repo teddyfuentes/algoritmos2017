@@ -1,0 +1,101 @@
+//MENU  DEL SEGUNDO LABORATORIO 
+
+//TEDDY FUENTES ROJAS 15 DE AGOSTO
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+float potencia(float base, int exponente);
+int factorial( int n);
+float serie (float base, float tamaño);
+
+
+void main()
+{
+	int opcion,x,y,n,fac, BASE, N, se;
+	float resultado;
+	do
+	{
+		cout<<"	WELCOME TO MENU "<<endl;
+		cout<<"1.- potencia"<<endl;
+		cout<<"2.- factorial"<<endl;
+		cout<<"3.- serie"<<endl;
+		cout<<"0.- SALIR"<<endl;
+		cout<<"Por favor digite una opcion"<<endl;
+		cin>>opcion;
+
+		switch (opcion)
+		{
+		case 1:
+			{
+
+				cout<<"ingresar la base: "<<endl;
+				cin>>x;
+				cout<<"ingresar el exponente : "<<endl;
+				cin>>y;
+				resultado= potencia(x,y);
+				cout<<"el resultado es : "<< resultado; 
+				break;
+			}
+		case 2:
+			{
+				cout<<"ingresar un numero "<<endl;
+				cin>>n;
+				fac=factorial(n);
+				cout<<"el factorial es: "<<fac;
+				break;
+			}
+		case 3:
+			{
+				cout<<"ingresar la base"<<endl;
+				cin>>BASE;
+				cout<<"ingresar n"<<endl;
+				cin>>N;
+				se =serie(BASE,N);
+				cout<<"resultado de la serie es: "<<se<<endl;
+			}
+		case 0:
+			{
+			cout<<"graciasss "<<endl;
+			break;
+			 }
+		}
+	}while (opcion!=0);	
+
+getch();
+}
+
+
+float  serie(float base,float tamaño)
+{
+	float s=0;
+	for(int i=1;i<=tamaño;i++)
+	{
+		s=s+(potencia(base,tamaño)/factorial(tamaño));
+	}
+	return(s);
+
+}
+float potencia(float base, int exponente)
+{
+	float pot=1;
+	for (int i=0;i<exponente;i++)
+	{
+		pot=pot*base;
+	}
+	return (pot);
+}
+
+int factorial(int n)
+{
+	int producto=1;
+	for (int i=1 ; i<n+1 ; i++)
+	{
+		producto=producto*i;
+	}
+	return (producto);
+}
