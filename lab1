@@ -1,7 +1,7 @@
 //hacer una seria que cumpla con la suma de numeros pares hasta un limite N
 // S=2+4+6+8+.... 
 //donde n n es el mayo numero de la serie, si n=7 entonces se debe sumar hasta el limite de 6.
-
+//TEDDY FUENTES 8 DE AGOSTO
 
 #include <iostream>
 #include "conio.h"
