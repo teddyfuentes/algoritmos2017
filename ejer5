@@ -1,0 +1,44 @@
+// ejercicio5.cpp : Defines the entry point for the console application.
+// resolver la ecuacion dada--- teddy fuentes rojas
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+
+
+using namespace std;
+
+void respuesta(float a, float b, float c, float d, float e, float f, float &x, float &y);
+
+
+void main()
+{
+	float a,b,c,d,e,f,x,y;
+		do{
+		cout<<"\n Ingrese el valor de a que sea diferente de 0 : "<<endl;
+		cin>>a;
+	}while(a== 0);
+		cout<<"\n Ingresar los valores de b:  ";
+		cin>>b;
+		cout<<"\n Ingresar los valores de c:  ";
+		cin>>c;
+		cout<<"\n Ingresar los valores de d:  ";
+		cin>>d;
+		cout<<"\n Ingresar los valores de e:  ";
+		cin>>e;
+		cout<<"\n Ingresar los valores de b:  ";
+		cin>>f;
+		respuesta(a,b,c,d,e,f,x,y);
+		 cout<<" El valor de X es igual a ", x;
+		 cout<<"El valor de Y es igual a ", y;
+	getch();
+}
+void respuesta(float a, float b, float c, float d, float e, float f, float &x, float &y)
+
+{ 
+	y = ((a * f) - (d * c)) / ((a * e) - (d * b));
+    x = (c - b * y)/ a;
+}
+ 
