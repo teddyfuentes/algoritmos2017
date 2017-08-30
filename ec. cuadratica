@@ -1,0 +1,90 @@
+// algo1.cpp: define el punto de entrada de la aplicación de consola.
+//ECUACION CUADRATICA: TEDDY FUENTES ROJAS 
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#include "math.h"
+using namespace std;
+
+float solucionUnica(float b,float a);
+float variasSoluciones( float a, float b, float c);
+float variasSoluciones2(float a, float b,float c);
+float solucionImaginaria( float a, float b,float c);
+float solucionImaginaria1(float a,float b,float c);
+float discriminante (float a,float b, float c);
+
+void main()
+{
+	float a,b,c,d,SOL1,SOL2,SOL,SOL3, SOLUCION, SOLUCION1 ;
+	cout<<"ingresar a "<<endl;
+	cin>>a;
+	cout<<"ingresar b"<<endl;
+	cin>>b;
+	cout<<"ingresar c "<<endl;
+	cin>>c;
+	cout<<"el discriminante es: "<<endl;
+	d=discriminante(a,b,c);
+	cout<<d<<endl;
+	if (d==0)
+	{ 
+		SOL1= solucionUnica(b,a);
+		cout<<SOL1;
+	}
+	//else
+	//{
+	if(d>0) 
+	{
+		SOL2=variasSoluciones(a,b,c);
+		SOLUCION=variasSoluciones2(a,b,c);
+		cout<<"las soluciones son "<<"X1= "<<SOL2<<", "<<"X2= "<<SOLUCION;
+	}//else 
+	if(d<0)
+	{
+		SOL3=solucionImaginaria (a,b,c);
+		SOLUCION1=solucionImaginaria1(a,b,c);
+		cout<<"las soluciones son "<<"X1= "<<SOL3<<", "<<"X2= "<<SOLUCION1;
+	}	
+getch();
+}
+float solucionUnica( float b, float a)
+{
+	float x;
+	x=-b/2*a;
+	return (x);
+} 
+
+float variasSoluciones(float a, float b,float c)
+{	
+	float x1;
+	x1=(-b+sqrt(b*b-4*a*c))/(2.0*a);
+	return (x1);
+}
+
+float variasSoluciones2(float a, float b,float c)
+{
+	float x2;
+	x2=(-b-sqrt(b*b-4*a*c))/(2.0*a);
+	return (x2);
+}
+
+float solucionImaginaria(float a,float b,float c)
+{
+	float ima1;
+	ima1=(-b+sqrt(b*b-4*a*c*(-1)))/(2*a);
+	return(ima1);
+}
+float solucionImaginaria1(float a,float b,float c)
+{
+	float ima2;
+	ima2=(-b-sqrt(b*b-4*a*c*(-1)))/(2*a);
+	return(ima2);
+}
+float discriminante(float a,float b, float c)
+{
+	float d;
+	d=(b*b) - 4*a*c;
+	return (d);
+
+}
