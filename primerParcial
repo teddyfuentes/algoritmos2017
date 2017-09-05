@@ -1,0 +1,108 @@
+PREGUNTA 1
+// lab.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+void eliminarPrimos(int vec[],int n);
+bool verificarPrimo(int vec[]);
+void cargar(int vec[],int n);
+void mostrar(int vec[],int n);
+
+void main()
+{
+	int n, vec[100];
+	cout<<"ingresar el tamaño de N"<<endl;
+	cin>>n;
+	cargar(vec,n);
+	eliminarPrimos(vec,n);
+	mostrar(vec,n);
+	getch();
+}
+
+void eliminarPrimos(int vec[],int &n)
+{
+	int i;
+	bool k=false;
+	for(int i=0;i<n;i++)
+	{
+		if (verificarPrimo(vec[i])==true)
+		{
+			k=true;
+		}
+	}
+	if (k==true)
+	{
+		for(int j=i;j<n;j++)
+		{
+			vec[j+1]=vec[j];
+		}
+
+		n--;
+	}
+}
+void cargar(int vec[],int n)
+{
+	for (int i=0;i<n;i++)
+	{
+		cout<<"vec["<<i<<"]=";
+		cin>>vec[i];
+	}
+}
+void mostrar(int vec[],int n)
+{
+	for (int i=0;i<n;i++)
+	{
+		cout<<vec[i]<<endl;
+	}
+}
+bool verificarPrimo(int n)
+{
+	bool k=false;
+	for(int i=0;i<n;i++)
+	{
+		if (n%i!=0)
+		{
+			k=true;
+		}
+	}
+	return(k);
+}
+
+
+PREGUNTA 3
+// pregunta2.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "string"
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	string cadena;
+	int n,c=1;
+	cin.ignore();
+	cout<<"ingresar una cadena"<<endl;
+	getline(cin,cadena);
+	n=cadena.length();
+	for(int i=0;i<n;i++)
+	{
+		if (cadena[i]=='A'||cadena[i]=='B'||cadena[i]=='C'||cadena[i]=='D'||cadena[i]=='E'||cadena[i]=='F'||cadena[i]=='G'||cadena[i]=='H'||cadena[i]=='I'||cadena[i]=='J'||cadena[i]=='K'||cadena[i]=='L'||cadena[i]=='M'||cadena[i]=='N'||cadena[i]=='O'||cadena[i]=='P'||cadena[i]=='B'||cadena[i]=='Q'||cadena[i]=='R'||cadena[i]=='S'||cadena[i]=='T'||cadena[i]=='U'||cadena[i]=='V'||cadena[i]=='W'||cadena[i]=='X'||cadena[i]=='Y'||cadena[i]=='Z')
+		{
+		c++;
+		}
+	}
+	cout<<"la cantidad de mayusculas es:	"<<c;
+	getch();
+	
+}
+
+
+
