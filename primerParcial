@@ -104,5 +104,45 @@ void main()
 	
 }
 
+PREGUNTA OPCIONAL 
+D)
+
+
+// pregunta 3.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "string"
+using namespace std;
+void transformar(string cadena);
+
+void main()
+{
+	cin.ignore();
+	string cadena;
+	cout<<"ingresar una cadena";
+	getline(cin,cadena);
+	transformar(cadena);
+	cout<<cadena;
+	getch();
+
+}
+
+void trasnformar(string cadena)
+{
+	int n='a'-'A',l;
+	l=cadena.length();
+	for(int i=0;i<n;i++)
+	{
+		if (cadena[i]>='a'&& cadena[i]<='z')
+		{
+			cadena[i]=cadena[i]-n;
+		}
+	}
+
+}
+
 
 
