@@ -1,0 +1,74 @@
+// lab.cpp : Defines the entry point for the console application.
+// TEDDY FUENTES
+
+#include "stdafx.h"
+#include <iostream>
+#include "string"
+#include "conio.h"
+#define MAX 100
+//void cargarArreglo(tEmpleado vec[MAX], int n);
+//void mostrarArreglo(tEmpleado vec[MAX], int n);
+using namespace std;
+
+struct tEmpleado{
+	int nemp;
+	string nombre;
+	string apellido;
+	string direccion;
+	int telefono;
+	int celular;
+	float salarioBruto;
+};
+
+void main()
+{
+	int n,i, m;
+	tEmpleado vec[MAX];
+	do{
+	cout<<"ingresar la cantidad de empleados: ";
+	cin>>n;
+	}while (n<0 || n>MAX);
+	for (int i=0;i<n;i++)
+	{
+		vec[i].nemp=i+1;
+		cin.ignore();
+		cout<<"ingresar el nombre del empleado: ";
+		getline(cin,vec[i].nombre);
+		cout<<"ingresar el apellido del empleado: ";
+		getline(cin,vec[i].apellido);
+		cout<<"ingresar el direccion del empleado: ";
+		getline(cin,vec[i].direccion);
+		cout<<"ingresar el telefono del empleado: ";
+		cin>>vec[i].telefono;
+		cout<<"ingresar el celular del empleado: ";
+		cin>>vec[i].celular;
+		cout<<"ingresar el salario bruto del empleado: ";
+		cin>>vec[i].salarioBruto;
+	}
+	do{
+	cout<<"ingresar la cantidad de empleados que desea mostrar: ";
+	cin>>m;
+	}while (m<0 || m>n);
+	    cout<<"nombre del empleado:"<<vec[m].nombre<<endl;
+		cout<<"apellido del empleado:"<<vec[m].apellido<<endl ;
+		cout<<"direccion del empleado: "<<vec[m].direccion<<endl;
+		cout<<" telefono del empleado: "<<vec[m].telefono<<endl;
+		cout<<"ingresar el celular del empleado: "<<vec[m].celular<<endl;
+		cout<<"ingresar el salario bruto del empleado: "<<vec[m].salarioBruto;
+	getch();
+}
+/*void mostrarArreglo(tEmpleado vec[MAX], int n)
+{
+	for (int i=0;i<n;i++)
+	{
+		vec[i].nemp=i+1;
+		cin.ignore();
+		cout<<"nombre del empleado:"<<vec[i].nombre<<endl;
+		cout<<"apellido del empleado:"<<vec[i].apellido<<endl ;
+		cout<<"direccion del empleado: "<<vec[i].direccion<<endl;
+		cout<<" telefono del empleado: "<<vec[i].telefono<<endl;
+		cout<<"ingresar el celular del empleado: "<<vec[i].celular<<endl;
+		cout<<"ingresar el salario bruto del empleado: "<<vec[i].salarioBruto;
+	}
+
+}*/
