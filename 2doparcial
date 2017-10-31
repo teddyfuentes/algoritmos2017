@@ -1,0 +1,98 @@
+// segundoparcial.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+#define MAX 10
+using namespace std;
+//void cargar(tvector vec,int n);
+
+void main()
+{
+	int n;
+	string cadena;
+	cout<<"ingresar una cadena";
+	cin>>cadena;
+	n=cadena.length();
+	for(int i=0;i<n;i++)
+	{
+			if (cadena[i]=='a')
+			cadena[i]='A';
+			if (cadena[i]=='b')
+			cadena[i]='B';
+			if (cadena[i]=='c')
+			cadena[i]='C';
+			if (cadena[i]=='d')
+			cadena[i]='D';
+		    if (cadena[i]=='e')
+			cadena[i]='E';
+				
+		    if (cadena[i]=='f')
+			cadena[i]='F';
+			if (cadena[i]=='g')
+			cadena[i]='G';
+			
+			if (cadena[i]=='h')
+			cadena[i]='H';
+			
+			if (cadena[i]=='i')
+			cadena[i]='I';
+			
+			if (cadena[i]=='j')
+			cadena[i]='J';
+			
+			if (cadena[i]=='k')
+			cadena[i]='K';
+			
+			if (cadena[i]=='l')
+			cadena[i]='L';
+			
+			if (cadena[i]=='m')
+			cadena[i]='M';
+			
+			if (cadena[i]=='n')
+			cadena[i]='N';
+			
+			if (cadena[i]=='o')
+			cadena[i]='O';
+					
+			if (cadena[i]=='p')
+			cadena[i]='P';
+					
+			if (cadena[i]=='q')
+			cadena[i]='Q';
+					
+			if (cadena[i]=='r')
+			cadena[i]='R';
+					
+			if (cadena[i]=='s')
+			cadena[i]='S';
+					
+			if (cadena[i]=='t')
+			cadena[i]='T';
+					
+			if (cadena[i]=='u')
+			cadena[i]='U';
+					
+			if (cadena[i]=='v')
+			cadena[i]='v';
+					
+			if (cadena[i]=='w')
+			cadena[i]='W';
+					
+			if (cadena[i]=='x')
+			cadena[i]='X';
+					
+			if (cadena[i]=='y')
+			cadena[i]='Y';
+					
+			if (cadena[i]=='z')
+			cadena[i]='Z';
+						
+	}
+	cout<<cadena;
+	getch();
+}
+
