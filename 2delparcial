@@ -1,0 +1,55 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 10
+#define BI 1
+using namespace std;
+struct tvector{
+	int minivector[BI];
+};
+void cargar(tvector vector[],int n);
+void mostrar(tvector vector[],int n);
+void abundante(tvector vector[],int n);
+void main()
+{tvector vector[MAX];
+int n;
+cout<<"ingrese el tamano del vector"<<endl;
+cin>>n;
+cargar(vector,n);
+
+abundante(vector,n);
+mostrar(vector,n);
+getch();
+
+}
+
+void cargar(tvector vector[],int n)
+{for(int i=0;i<n;i++)
+	{cout<<"V ["<<i<<"].M[0] =";
+		cin>>vector[i].minivector[0];
+	}
+}
+void mostrar(tvector vector[],int n)
+{for(int i=0;i<n;i++)
+	for(int j=0;j<2;j++)
+	cout<<"V ["<<i<<"].M["<<j<<"] = "<<vector[i].minivector[j]<<endl;
+}
+void abundante(tvector vector[],int n)
+{int s=0;
+	for(int i=0;i<n;i++)
+	{int m=vector[i].minivector[0];
+	for(int aux=1;aux<m;aux++)
+		{if(m%aux==0)
+			s=s+aux;
+		}
+	if(s>m)
+		{cout<<m<<" es un numero abundante porque "<<s<<" es mayor a "<<m<<endl;
+		vector[i].minivector[1]=0;
+		}
+	else
+		{cout<<m<<" no es un numero abundante porque "<<s<<" es menor a "<<m<<endl;
+		vector[i].minivector[1]=1;
+		}
+	s=0;
+	}
+}
